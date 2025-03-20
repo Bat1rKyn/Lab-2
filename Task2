@@ -1,0 +1,15 @@
+open System
+
+let List_Seek (numbers: int list) (target: int) : int =
+    numbers |> List.filter (fun n -> n = target) |> List.length
+
+let List = [1; 2; 2; 3; 3; 3; 4; 4; 4; 4; 5; 5; 5; 5; 5; 6; 6; 6; 6; 6; 6]
+printf "Введите число, которое хотите найти (1-6)\n"
+let N = Console.ReadLine()
+if Char.IsNumber(char(N)) = false then
+        printf "Введён недопустимый символ"
+        Environment.Exit(0)
+let Num = int(N) 
+let occurrences = List_Seek List Num
+
+printfn "Число %d встречается %d раз(а) в списке." Num occurrences
