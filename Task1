@@ -1,0 +1,9 @@
+open System
+let getFirstSym (numbers: int list) : int list =
+    numbers 
+    |> List.map (fun n -> 
+        let str = n.ToString()
+        int (str.[0].ToString()))
+let List = [123; 456; 789; 1011; 2002]
+let List2 = getFirstSym List
+printfn "Первые цифры: %A" List2
